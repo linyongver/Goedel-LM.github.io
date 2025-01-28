@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-  <title>Godel-Prover</title>
+  <title>Goedel-Prover</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta name="description"
     content="Pushing the Limit of Automated Theorem Proving Through Large Scale Data Synthesizing">
-  <meta name="keywords" content="Godel-Prover, LMM">
+  <meta name="keywords" content="Goedel-Prover, LMM">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Godel-Prover: Pushing the Limit of Automated Theorem Proving Through Large Scale Data Synthesizing</title>
+  <title> Goedel-Prover: Pushing the Limit of Automated Theorem Proving Through Large Scale Data Synthesizing</title>
 
-  <link rel="icon" href="./static/images/Godel-Prover_icon2.png">
+  <link rel="icon" href="./static/images/Goedel-Prover_icon2.png">
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -39,7 +39,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title is-bold">
-              Godel-Prover
+              Goedel-Prover
             </h1>
             <h2 class="subtitle is-3 publication-subtitle">
               Pushing the Limit of Automated Theorem Proving Through Large Scale Data Synthesizing
@@ -186,9 +186,9 @@
           <!-- <h2 class="title is-3">🔔News</h2> -->
           <!-- <div class="content has-text-justified">
             <p>
-              <b>🔥[2024-09-05] Introducing <a href="https://arxiv.org/abs/2409.02813">Godel-Prover-Pro</a>, a robust
+              <b>🔥[2024-09-05] Introducing <a href="https://arxiv.org/abs/2409.02813">Goedel-Prover-Pro</a>, a robust
                 version of
-                Godel-Prover benchmark for multimodal AI evaluation! 🚀</b>
+                Goedel-Prover benchmark for multimodal AI evaluation! 🚀</b>
             </p>
             <p>
               <b>🚀[2024-01-31]: We added Human Expert performance on the <a href="#leaderboard">Leaderboard</a>!🌟</b>
@@ -551,6 +551,10 @@
   <!-- Results Section -->
   <section class="results-section">
     <style>
+      .goedel-row {
+        font-weight: bold;
+      }
+
       .results-section {
         padding: 4rem 2rem;
         background: #f8f9fa;
@@ -586,6 +590,41 @@
         margin-bottom: 2rem;
         overflow: hidden;
       }
+    
+      .table-container table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+    
+      .table-container th {
+        background-color: white;
+        padding: 12px 15px;
+        text-align: left;
+        font-weight: bold;
+        border-bottom: 2px solid #eee;
+      }
+    
+      .table-container td {
+        padding: 12px 15px;
+        text-align: left;
+      }
+    
+      .block-1 {
+        background-color: #fff0f5; /* 浅粉色 */
+      }
+    
+      .block-2 {
+        background-color: #f0f8ff; /* 浅蓝色 */
+      }
+    
+      .block-3 {
+        background-color: #f0fff0; /* 浅绿色 */
+      }
+    
+      .highlight {
+        color: #2980b9;
+        font-weight: bold;
+      }
 
       .table-container table {
         width: 100%;
@@ -603,10 +642,6 @@
         background-color: #f8f9fa;
         font-weight: bold;
         color: #2c3e50;
-      }
-
-      .table-container tr:nth-child(even) {
-        background-color: #f8f9fa;
       }
 
       .highlight {
@@ -820,58 +855,63 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <!-- Block 1 - Pass@32/128 -->
+            <tr class="block-1">
               <td>TheoremLamma</td>
               <td>128</td>
               <td>33.6%</td>
             </tr>
-            <tr>
+            <tr class="block-1">
               <td>Deepseek-Prover-v1</td>
               <td>32</td>
               <td>46.1% ± 0.5%</td>
             </tr>
-            <tr>
+            <tr class="block-1">
               <td>Deepseek-Prover-v1.5-SFT</td>
               <td>32</td>
               <td>48.2% ± 0.6%</td>
             </tr>
-            <tr>
+            <tr class="block-1">
               <td>Deepseek-Prover-v1.5-RL</td>
               <td>32</td>
               <td>50.0% ± 0.5%</td>
             </tr>
-            <tr>
-              <td>Godel-Prover-SFT</td>
+            <tr class="block-1 goedel-row">
+              <td>Goedel-Prover-SFT</td>
               <td>32</td>
               <td class="highlight">57.6% ± 0.7%</td>
             </tr>
-            <tr>
+      
+            <!-- Block 2 - Pass@3200 -->
+            <tr class="block-2">
               <td>Deepseek-Prover-v1.5-SFT</td>
               <td>3200</td>
               <td>53.3%</td>
             </tr>
-            <tr>
+            <tr class="block-2">
               <td>Deepseek-Prover-v1.5-RL</td>
               <td>3200</td>
               <td>54.9%</td>
             </tr>
-            <tr>
-              <td>Godel-Prover-SFT</td>
+            <tr class="block-2 goedel-row">
+              <td>Goedel-Prover-SFT</td>
               <td>3200</td>
               <td class="highlight">62.7%</td>
             </tr>
-            <tr>
+      
+            <!-- Block 3 - Pass@4×6400 -->
+            <tr class="block-3">
               <td>Deepseek-Prover-v1.5-SFT</td>
               <td>4×6400</td>
               <td>55.8%</td>
             </tr>
-            <tr>
+            <tr class="block-3">
               <td>Deepseek-Prover-v1.5-RL</td>
               <td>4×6400</td>
               <td>58.5%</td>
             </tr>
-            <tr>
-              <td>Godel-Prover-SFT</td>
+            <tr class="block-3 goedel-row">
+              <td>Goedel-Prover-SFT</td>
               <td>4×6400</td>
               <td class="highlight">64.7%</td>
             </tr>
@@ -880,7 +920,7 @@
       </div>
 
       <div class="description">
-        <p>Our Godel-Prover-SFT achieves state-of-the-art performance on miniF2F, surpassing previous models by
+        <p>Our Goedel-Prover-SFT achieves state-of-the-art performance on miniF2F, surpassing previous models by
           significant margins. The model shows consistent improvement across different computational budgets, achieving
           57.6% at Pass@32, 62.7% at Pass@3200, and 64.7% at Pass@4×6400.</p>
       </div>
@@ -908,8 +948,8 @@
               <td>14.7%</td>
               <td>33.7%</td>
             </tr>
-            <tr>
-              <td>Godel-Prover-SFT</td>
+            <tr class="goedel-row">
+              <td>Goedel-Prover-SFT</td>
               <td class="highlight">57.6% (+7.6)</td>
               <td>15.2% (-0.8)</td>
               <td class="highlight">61.2% (+7.2)</td>
@@ -940,11 +980,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr class="goedel-row">
               <td>1</td>
-              <td>Godel-Prover-SFT <span class="heart-green">♥</span></td>
+              <td>Goedel-Prover-SFT <span class="heart-green">♥</span></td>
               <td>Whole Proof Generation</td>
-              <td>8</td>
+              <td>7</td>
               <td>512</td>
             </tr>
             <tr>
@@ -956,7 +996,7 @@
             </tr>
             <tr>
               <td>3</td>
-              <td>Godel-Prover-SFT <span class="heart-green">♥</span></td>
+              <td>Goedel-Prover-SFT <span class="heart-green">♥</span></td>
               <td>Whole Proof Generation</td>
               <td>6</td>
               <td>32</td>
@@ -1008,7 +1048,7 @@
       </div>
 
       <div class="description">
-        <p>On the challenging PutnamBench dataset, Godel-Prover-SFT achieves new state-of-the-art performance, solving 8
+        <p>On the challenging PutnamBench dataset, Goedel-Prover-SFT achieves new state-of-the-art performance, solving 8
           out of 644 problems with Pass@512, surpassing previous methods including ABEL and InternLM2.5-StepProver.</p>
       </div>
 
@@ -1036,7 +1076,7 @@
               <td>39.9%</td>
             </tr>
             <tr>
-              <td>Godel-Iter-6</td>
+              <td>Goedel-Iter-6</td>
               <td>Iter-5 Proofs</td>
               <td class="highlight">56.6%</td>
               <td>13.3%</td>
@@ -1044,7 +1084,7 @@
               <td class="highlight">43.0%</td>
             </tr>
             <tr>
-              <td>Godel-Iter-6</td>
+              <td>Goedel-Iter-6</td>
               <td>Iter-5 Proofs + Mathlib</td>
               <td>54.1%</td>
               <td class="highlight">16.0%</td>
@@ -1197,7 +1237,7 @@
       <div class="key-findings">
         <h3>Key Findings</h3>
         <ul>
-          <li>Godel-Prover-SFT achieves state-of-the-art performance of 57.6% on miniF2F at Pass@32</li>
+          <li>Goedel-Prover-SFT achieves state-of-the-art performance of 57.6% on miniF2F at Pass@32</li>
           <li>Significant improvements across multiple datasets with an average performance gain of 5.4%</li>
           <li>Best performance on PutnamBench with 8 problems solved out of 644</li>
           <li>Using both formalizers (A and B) leads to better performance compared to single formalizer approaches</li>
@@ -1212,8 +1252,8 @@
     <div class="container is-max-desktop content">
       <h2 class="title is-3 has-text-centered">BibTeX</h2>
       <pre><code>
-        @article{lin2024Godelprover,
-          title={Godel-Prover: Pushing the Limit of Automated Theorem Proving Through Large Scale Data Synthesizing}, 
+        @article{lin2024Goedelprover,
+          title={Goedel-Prover: Pushing the Limit of Automated Theorem Proving Through Large Scale Data Synthesizing}, 
           author={Yong Lin and Shange Tang and Bohan Lyu and Jiayun Wu and Hongzhou Lin and Kaiyu Yang and Jia Li and Mengzhou Xia and Danqi Chen and Sanjeev Arora and Chi Jin},
         }
     </code></pre>
