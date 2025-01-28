@@ -390,6 +390,73 @@
           font-size: 1rem;
         }
       }
+
+      .figures-container {
+        display: flex;
+        /* Flexbox layout */
+        justify-content: center;
+        /* Center the images horizontally */
+        align-items: flex-start;
+        /* Align items at the top */
+        gap: 1.5rem;
+        /* Add gap between images */
+        max-width: 1000px;
+        /* Limit the total width of the container */
+        margin: 0 auto;
+        /* Center the container itself */
+        padding: 0 40px;
+      }
+
+      .figure {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .figure-1 {
+        flex: 1;
+        /* Allow flexible width */
+        max-width: 30%;
+        /* Restrict maximum width */
+      }
+
+      .figure-2 {
+        flex: 1;
+        /* Allow flexible width */
+        max-width: 70%;
+        /* Restrict maximum width */
+      }
+
+      .figure img {
+        width: 100%;
+        /* Ensure images are responsive */
+        height: auto;
+        border-radius: 4px;
+      }
+
+      .figure-caption {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        color: #666;
+        text-align: center;
+      }
+
+      /* Responsive layout for smaller screens */
+      @media (max-width: 900px) {
+        .figures-container {
+          flex-direction: column;
+          /* Stack images vertically */
+          align-items: center;
+          /* Center images vertically */
+        }
+
+        .figure-1,
+        .figure-2 {
+          max-width: 100%;
+          /* Full width for smaller screens */
+        }
+      }
     </style>
 
     <div class="container">
@@ -397,6 +464,20 @@
         <h2>Methodology</h2>
         <p>A comprehensive approach to automated theorem proving through large-scale data synthesis and iterative
           training</p>
+      </div>
+
+      <div class="figures-container">
+        <!-- First Image -->
+        <div class="figure figure-1">
+          <img src="./static/images/Formalization_illustration.png" alt="Formalization illustration">
+          <div class="figure-caption">Figure 1: Illustration of training formalizer</div>
+        </div>
+
+        <!-- Second Image -->
+        <div class="figure figure-2">
+          <img src="./static/images/Iteration_illustration.png" alt="Iteration illustration">
+          <div class="figure-caption">Figure 2: Illustration of iterative training</div>
+        </div>
       </div>
 
       <div class="cards">
@@ -590,12 +671,12 @@
         margin-bottom: 2rem;
         overflow: hidden;
       }
-    
+
       .table-container table {
         width: 100%;
         border-collapse: collapse;
       }
-    
+
       .table-container th {
         background-color: white;
         padding: 12px 15px;
@@ -603,24 +684,27 @@
         font-weight: bold;
         border-bottom: 2px solid #eee;
       }
-    
+
       .table-container td {
         padding: 12px 15px;
         text-align: left;
       }
-    
+
       .block-1 {
-        background-color: #fff0f5; /* 浅粉色 */
+        background-color: #fff0f5;
+        /* 浅粉色 */
       }
-    
+
       .block-2 {
-        background-color: #f0f8ff; /* 浅蓝色 */
+        background-color: #f0f8ff;
+        /* 浅蓝色 */
       }
-    
+
       .block-3 {
-        background-color: #f0fff0; /* 浅绿色 */
+        background-color: #f0fff0;
+        /* 浅绿色 */
       }
-    
+
       .highlight {
         color: #2980b9;
         font-weight: bold;
@@ -881,7 +965,7 @@
               <td>32</td>
               <td class="highlight">57.6% ± 0.7%</td>
             </tr>
-      
+
             <!-- Block 2 - Pass@3200 -->
             <tr class="block-2">
               <td>Deepseek-Prover-v1.5-SFT</td>
@@ -898,7 +982,7 @@
               <td>3200</td>
               <td class="highlight">62.7%</td>
             </tr>
-      
+
             <!-- Block 3 - Pass@4×6400 -->
             <tr class="block-3">
               <td>Deepseek-Prover-v1.5-SFT</td>
@@ -1048,7 +1132,8 @@
       </div>
 
       <div class="description">
-        <p>On the challenging PutnamBench dataset, Goedel-Prover-SFT achieves new state-of-the-art performance, solving 8
+        <p>On the challenging PutnamBench dataset, Goedel-Prover-SFT achieves new state-of-the-art performance, solving
+          8
           out of 644 problems with Pass@512, surpassing previous methods including ABEL and InternLM2.5-StepProver.</p>
       </div>
 
