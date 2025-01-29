@@ -505,7 +505,7 @@
               <div class="content">
                 Assess and filter the formalized statements.
                 <ul>
-                  <li><strong>CC Test:</strong> Using LEAN compilter to verify syntax</li>
+                  <li><strong>CC Test:</strong> Using LEAN compiler to verify syntax</li>
                   <li><strong>FC Test:</strong> Using LLM as judge to verify accuracy and completeness</li>
                 </ul>
               </div>
@@ -946,7 +946,6 @@
               <th>ProofNet</th>
               <th>FormalNumina</th>
               <th>Lean-workbook</th>
-              <th>Average</th>
             </tr>
           </thead>
           <tbody>
@@ -956,7 +955,6 @@
               <td class="highlight">16.0%</td>
               <td>54.0%</td>
               <td>14.7%</td>
-              <td>33.7%</td>
             </tr>
             <tr class="goedel-row">
               <td>Goedel-Prover-SFT</td>
@@ -964,7 +962,6 @@
               <td>15.2% (-0.8)</td>
               <td class="highlight">61.2% (+7.2)</td>
               <td class="highlight">21.2% (+6.5)</td>
-              <td class="highlight">39.1% (+5.4)</td>
             </tr>
           </tbody>
         </table>
@@ -1208,7 +1205,6 @@
         <h3>Key Findings</h3>
         <ul>
           <li>Goedel-Prover-SFT achieves state-of-the-art performance of 57.6% on miniF2F at Pass@32</li>
-          <li>Significant improvements over Deepseek-Prover-v1.5-RL across miniF2F, ProofNet, FormalNumina, and Lean-workbook with an average performance gain of 5.4%</li>
           <li>Ranking the 1st on the PutnamBench Leaderboard with 7 problems solved out of 644 with Pass@512</li>
           <li>Cumulatively solving 29.7K problems in Lean-workbook, significantly increasing the 15.7K proofs found by prior works.</li>
           <li>Iterative training process demonstrates consistent improvement in model performance</li>
