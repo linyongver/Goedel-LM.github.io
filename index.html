@@ -143,7 +143,7 @@
             <h2 class="title is-3">Introduction</h2>
             <div class="content has-text-justified">
               <p>
-                Large language models (LLMs) have shown impressive capabilities in reasoning, particularly in solving mathematical problems. However, relying solely on natural language for reasoning poses challenges in verification, undermining trust in practical applications. Formal theorem proving offers a promising solution: training LLMs to generate proofs in formal languages that can be mechanically verified. A key obstacle in this domain is the scarcity of formal data. To address this challenge, we use language models to autoformalize extensive math problems from natural language to formal statements. Next, we train the prover through a standard iterative process that alternates between attempting to prove these statements and training the prover using newly found proofs. Our model outperforms the previous state-of-the-art (SOTA) whole-proof generation model, DeepSeek-Prover-v1.5-RL, by 7.6% on the miniF2F benchmark, achieving a Pass@32 score of 57.6%. Our model successfully solves 7 problems on the challenging PutnamBench by Pass@512, securing the 1st position on the leaderboard. Furthermore, we have cumulatively solved 29.7K problems in Lean Workbook, significantly increasing the 15.7K proofs found by existing methods. We contribute open-source resources to support future research in formal theorem proving.
+                Large language models (LLMs) have shown impressive capabilities in reasoning, particularly in solving mathematical problems. However, relying solely on natural language for reasoning poses challenges in verification, undermining trust in practical applications. Formal theorem proving offers a promising solution: training LLMs to generate proofs in formal languages that can be mechanically verified. A key obstacle in this domain is the scarcity of formal data. To address this challenge, we use language models to autoformalize extensive math problems from natural language to formal statements. Next, we train the prover through a standard iterative process that alternates between attempting to prove these statements and training the prover using newly found proofs. Our model outperforms the previous state-of-the-art (SOTA) whole-proof generation model, DeepSeek-Prover-v1.5-RL, by 7.6% on the miniF2F benchmark, achieving a Pass@32 score of 57.6%. Our model successfully solves 7 problems on the challenging PutnamBench by Pass@512, securing the 1st position on the leaderboard. Furthermore, we have cumulatively solved 29.7K problems in Lean Workbook, significantly increasing the 15.7K proofs found by prior methods. We contribute open-source resources to support future research in formal theorem proving.
               </p>
             </div>
           </div>
@@ -170,7 +170,7 @@
           <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
             Solving</p>
           <p style="font-size: 2.25rem; font-weight: 700; color: #ef4444; line-height: 1; margin-bottom: 0.5rem;">+89.2%</p>
-          <p style="font-size: 0.875rem; color: #6b7280;">more problems than existing works on Lean-workbook</p>
+          <p style="font-size: 0.875rem; color: #6b7280;">more problems than prior works on Lean-workbook</p>
         </div>
       </div>
     </div>
@@ -1210,7 +1210,7 @@
           <li>Goedel-Prover-SFT achieves state-of-the-art performance of 57.6% on miniF2F at Pass@32</li>
           <li>Significant improvements over Deepseek-Prover-v1.5-RL across miniF2F, ProofNet, FormalNumina, and Lean-workbook with an average performance gain of 5.4%</li>
           <li>Ranking the 1st on the PutnamBench Leaderboard with 7 problems solved out of 644 with Pass@512</li>
-          <li>Cumulatively solving 29.7K problems in Lean-workbook, significantly increasing the 15.7K proofs found by existing methods.</li>
+          <li>Cumulatively solving 29.7K problems in Lean-workbook, significantly increasing the 15.7K proofs found by prior works.</li>
           <li>Iterative training process demonstrates consistent improvement in model performance</li>
         </ul>
       </div>
