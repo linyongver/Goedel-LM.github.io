@@ -1,5 +1,5 @@
 # Godel-Prover
-Homepage of Godel-Prover, A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI. 
+Homepage of Godel-Prover. 
 
 This website is adapted from [Nerfies website](https://nerfies.github.io) and [MMMU](https://mmmu-benchmark.github.io).
 
