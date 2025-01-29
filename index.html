@@ -174,7 +174,7 @@
     <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
       <div style="flex: 0 0 40%; text-align: center;">
         <figure>
-          <img src="./static/images/minif2f_bar_plot.png" alt="miniF2F Performance"
+          <img src="static/images/YongUpdate/minif2f_bar_plot/minif2f_bar_plot-1.png" alt="miniF2F Performance"
             style="width: 100%; height: auto; border-radius: 0.5rem;">
           <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
             Performance of Pass@32 for full proof generation on miniF2F
@@ -183,7 +183,7 @@
       </div>
       <div style="flex: 0 0 30%; text-align: center;">
         <figure>
-          <img src="./static/images/inference_scale_performance.png" alt="Inference Scale Performance"
+          <img src="static/images/YongUpdate/inference_scale_performance/inference_scale_performance-1.png" alt="Inference Scale Performance"
             style="width: 100%; height: auto; border-radius: 0.5rem;">
           <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
             Comparison across different inference budgets
@@ -192,7 +192,7 @@
       </div>
       <div style="flex: 0 0 23%; text-align: center;">
         <figure>
-          <img src="./static/images/leanworkbook_proofs_bar_plot.png" alt="Leanworkbook Proofs"
+          <img src="static/images/YongUpdate/leanworkbook_proofs_bar_plot/leanworkbook_proofs_bar_plot-1.png" alt="Leanworkbook Proofs"
             style="width: 100%; height: auto; border-radius: 0.5rem;">
           <figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
             Number of problems solved in Lean-workbook
@@ -1165,26 +1165,35 @@
           the model's improved performance.</p>
       </div>
 
-      <div class="figures-container">
-        <div class="figure-wrapper">
-          <img src="./static/images/minif2f_and_heldout.png" alt="Performance on miniF2F and Held-out datasets">
+      <div class="figures-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; justify-items: center;">
+        <div class="figure-wrapper" style="text-align: center;">
+          <img src="static/images/YongUpdate/minif2f_iteration/minif2f_iteration-1.png" alt="Performance on miniF2F and Held-out datasets" style="max-width: 80%; height: auto;">
           <div class="figure-caption">
-            Figure 1: Performance trends on miniF2F and FormalNumina datasets across training iterations
+            Figure 1: Iterative Performance on miniF2F
           </div>
         </div>
-        <div class="figure-wrapper">
-          <img src="./static/images/proofnet_and_lean-workbook.png" alt="Performance on ProofNet and Lean-workbook">
+        <div class="figure-wrapper" style="text-align: center;">
+          <img src="static/images/YongUpdate/FormalNumina_iteration/FormalNumina_iteration-1.png" alt="Performance on ProofNet and Lean-workbook" style="max-width: 80%; height: auto;">
           <div class="figure-caption">
-            Figure 2: Performance trends on ProofNet and Lean-workbook datasets across training iterations
+            Figure 2: Iterative Performance on FormalNumina
+          </div>
+        </div>
+        <div class="figure-wrapper" style="text-align: center;">
+          <img src="static/images/YongUpdate/ProofNet_iteration/ProofNet_iteration-1.png" alt="Performance on ProofNet and Lean-workbook" style="max-width: 80%; height: auto;">
+          <div class="figure-caption">
+            Figure 3: Iterative Performance on ProofNet
+          </div>
+        </div>
+        <div class="figure-wrapper" style="text-align: center;">
+          <img src="static/images/YongUpdate/Lean-workbook_iteration/Lean-workbook_iteration-1.png" alt="Performance on ProofNet and Lean-workbook" style="max-width: 80%; height: auto;">
+          <div class="figure-caption">
+            Figure 4: Iterative Performance on Lean-workbook
           </div>
         </div>
       </div>
-
       <div class="description">
-        <p>The performance trends illustrated in Figures 1 and 2 demonstrate the consistent improvement of our model
-          across different datasets during the iterative training process. While miniF2F and FormalNumina datasets show
-          steady improvement, ProofNet and Lean-workbook exhibit different patterns, suggesting varying levels of
-          challenge and domain-specific characteristics.</p>
+        <p>The performance trends illustrated in Figures 1-4 demonstrate the consistent improvement of our model
+          across different datasets during the iterative training process.</p>
       </div>
 
       <!-- Key Findings -->
