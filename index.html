@@ -113,8 +113,40 @@
         </div>
       </div>
     </div>
-  </section>
+  
+    <section class="section">
+      <div class="container" style="margin-bottom: 2vh;">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <!-- <h2 class="title is-3">🔔News</h2> -->
+            <!-- <div class="content has-text-justified">
+              <p>
+                <b>🔥[2024-09-05] Introducing <a href="https://arxiv.org/abs/2409.02813">Goedel-Prover-Pro</a>, a robust
+                  version of
+                  Goedel-Prover benchmark for multimodal AI evaluation! 🚀</b>
+              </p>
+              <p>
+                <b>🚀[2024-01-31]: We added Human Expert performance on the <a href="#leaderboard">Leaderboard</a>!🌟</b>
+              </p>
+              <p>
+                <b>🔥[2023-12-04]: Our evaluation server for the test set is now available on <a
+                    href="https://eval.ai/web/challenges/challenge-page/2179/overview"><b>EvalAI</b></a>. We welcome all
+                  submissions and look forward to your participation! 😆</b>
+              </p>
+            </div> -->
+            <h2 class="title is-3">Introduction</h2>
+            <div class="content has-text-justified">
+              <p>
+                Large language models (LLMs) have shown impressive capabilities in reasoning, particularly in solving mathematical problems. However, relying solely on natural language for reasoning poses challenges in verification, undermining trust in practical applications. Formal theorem proving offers a promising solution: training LLMs to generate proofs in formal languages that can be mechanically verified. A key obstacle in this domain is the scarcity of formal data. To address this challenge, we use language models to autoformalize extensive math problems from natural language to formal statements. Next, we train the prover through a standard iterative process that alternates between attempting to prove these statements and training the prover using newly found proofs. Our model outperforms the previous state-of-the-art (SOTA) whole-proof generation model, DeepSeek-Prover-v1.5-RL, by 7.6% on the miniF2F benchmark, achieving a Pass@32 score of 57.6%. Our model successfully solves 7 problems on the challenging PutnamBench by Pass@512, securing the 1st position on the leaderboard. Furthermore, we have cumulatively solved 29.7K problems in Lean Workbook, significantly increasing the 15.7K proofs found by existing methods. We contribute open-source resources to support future research in formal theorem proving.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+      </div>
 
+  </section>
   <section style="max-width: 1000px; margin: 0 auto; padding: 2rem 1rem;">
     <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
       <div style="flex: 0 0 40%; text-align: center;">
@@ -145,82 +177,39 @@
         </figure>
       </div>
     </div>
+    <figcaption style="font-size: 1rem; color: #6b7280;">
+    <p>
+      <strong>(Left)</strong>: The performance of Pass@32 for full proof generation on miniF2F. Due to limited compute, we compare with DeepSeek-Prover-v1.5 on the Pass@32 metric, which is different from Pass@32 × 6400 in the corresponding figure. The Pass@N metric indicates that we generate N proofs for a single problem; if any one of these N proofs successfully solves the problem, it is considered solved.<strong>(Middle)</strong>: This sub-figure presents a comparison of Goedel-Prover-SFT and Deepseek-Prover-v1.5 in terms of miniF2F performance across different inference budgets, ranging from Pass@32, 64, 128, ..., 4 × 6400, to 16 × 6400. The performance numbers of Deepseek-Prover-v1.5 are provided for reference. Due to computational resource constraints, we tested Goedel-Prover-SFT only up to Pass@4 × 6400. Notably, Goedel-Prover-SFT's Pass@256 already exceeds the Pass@16 × 6400 performance of Deepseek-Prover-v1.5-RL (without inference time tree search).<strong>(Right)</strong>: The number of problems solved in Lean-workbook by Goedel-Prover-SFT compared to existing works. InternLM2.5-Step-Prover and InternLM-Math-Plus collectively solve and open-source 15.7K samples, while we solve and open-source 29.7K samples.
+    </p>  
+    </figcaption>
 
+<section style="max-width: 1000px; margin: 0 auto; padding: 2rem 1rem;">    
     <div style="background: #f8f9fa; border-radius: 1rem; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-      <h2 style="text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: #1f2937;">Key
-        Achievements</h2>
+      <h2 style="text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: #1f2937;">Key Achievements</h2>
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
         <div style="text-align: center;">
-          <p
-            style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
-            miniF2F Performance</p>
-          <p style="font-size: 2.25rem; font-weight: 700; color: #111827; line-height: 1; margin-bottom: 0.5rem;">57.6%
-          </p>
-          <p style="font-size: 0.875rem; color: #6b7280;">Pass@32</p>
+          <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
+            Ranking</p>
+          <p style="font-size: 2.25rem; font-weight: 700; color: #059669; line-height: 1; margin-bottom: 0.5rem;">1st</p>
+          <p style="font-size: 0.875rem; color: #6b7280;">on the Putman leaderboard</p>
         </div>
         <div style="text-align: center;">
-          <p
-            style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
-            Improvement</p>
-          <p style="font-size: 2.25rem; font-weight: 700; color: #059669; line-height: 1; margin-bottom: 0.5rem;">+7.6%
-          </p>
-          <p style="font-size: 0.875rem; color: #6b7280;">Over Previous SOTA</p>
+          <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
+            Improving</p>
+          <p style="font-size: 2.25rem; font-weight: 700; color: #059669; line-height: 1; margin-bottom: 0.5rem;">+7.6%</p>
+          <p style="font-size: 0.875rem; color: #6b7280;"> over previous SOTA on miniF2F Pass@32 </p>
         </div>
         <div style="text-align: center;">
-          <p
-            style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
-            Lean-workbook Problems</p>
-          <p style="font-size: 2.25rem; font-weight: 700; color: #111827; line-height: 1; margin-bottom: 0.5rem;">29.7K
-          </p>
-          <p style="font-size: 0.875rem; color: #6b7280;">Problems Solved</p>
+          <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
+            Solving</p>
+          <p style="font-size: 2.25rem; font-weight: 700; color: #059669; line-height: 1; margin-bottom: 0.5rem;">+89.2%</p>
+          <p style="font-size: 0.875rem; color: #6b7280;">more problems than existing works on Lean-workbook</p>
         </div>
       </div>
     </div>
-  </section>
+</section>
 
-  <section class="section">
-    <div class="container" style="margin-bottom: 2vh;">
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <!-- <h2 class="title is-3">🔔News</h2> -->
-          <!-- <div class="content has-text-justified">
-            <p>
-              <b>🔥[2024-09-05] Introducing <a href="https://arxiv.org/abs/2409.02813">Goedel-Prover-Pro</a>, a robust
-                version of
-                Goedel-Prover benchmark for multimodal AI evaluation! 🚀</b>
-            </p>
-            <p>
-              <b>🚀[2024-01-31]: We added Human Expert performance on the <a href="#leaderboard">Leaderboard</a>!🌟</b>
-            </p>
-            <p>
-              <b>🔥[2023-12-04]: Our evaluation server for the test set is now available on <a
-                  href="https://eval.ai/web/challenges/challenge-page/2179/overview"><b>EvalAI</b></a>. We welcome all
-                submissions and look forward to your participation! 😆</b>
-            </p>
-          </div> -->
-          <h2 class="title is-3">Introduction</h2>
-          <div class="content has-text-justified">
-            <p>
-              Large language models (LLMs) have shown impressive capabilities in reasoning, particularly in solving
-              mathematical problems. However, relying solely on natural language for reasoning poses challenges in
-              verification, undermining trust in practical applications. Formal theorem proving offers a promising
-              solution: training LLMs to generate proofs in formal languages that can be mechanically verified. A key
-              obstacle in this domain is the scarcity of formal data. To address this challenge, we begin by training
-              formalizers to transform extensive datasets of natural language problems into formal statements. Next, we
-              train the prover through a standard iterative process that involves generating and verifying proofs based
-              on these statements, followed by training the prover using the verified proofs. Our model outperforms the
-              previous state-of-the-art whole-proof generation model, DeepSeek-Prover-v1.5-RL, by 7.6\% on the miniF2F
-              benchmark, achieving a Pass@32 score of 57.6\%. Furthermore, we have cumulatively solved 29.7K problems in
-              Lean Workbook, significantly increasing the existing 16K proofs found by InternLM2.5-StepProver and
-              InternLM-Math-Plus. We conduct thorough evaluations across several datasets and contribute open-source
-              resources to support future research in formal theorem proving.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!--/ Abstract. -->
-    </div>
+ 
   </section>
 
   <section class="section" id="methodology">
@@ -462,22 +451,8 @@
     <div class="container">
       <div class="section-title">
         <h2>Methodology</h2>
-        <p>A comprehensive approach to automated theorem proving through large-scale data synthesis and iterative
+        <p>Large-scale data synthesis and iterative
           training</p>
-      </div>
-
-      <div class="figures-container">
-        <!-- First Image -->
-        <div class="figure figure-1">
-          <img src="./static/images/Formalization_illustration.png" alt="Formalization illustration">
-          <div class="figure-caption">Figure 1: Illustration of training formalizer</div>
-        </div>
-
-        <!-- Second Image -->
-        <div class="figure figure-2">
-          <img src="./static/images/Iteration_illustration.png" alt="Iteration illustration">
-          <div class="figure-caption">Figure 2: Illustration of iterative training</div>
-        </div>
       </div>
 
       <div class="cards">
