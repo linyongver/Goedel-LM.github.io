@@ -143,7 +143,10 @@
             <h2 class="title is-3">Introduction</h2>
             <div class="content has-text-justified">
               <p>
-                Large language models (LLMs) have shown impressive capabilities in reasoning, particularly in solving mathematical problems. However, relying solely on natural language for reasoning poses challenges in verification, undermining trust in practical applications. Formal theorem proving offers a promising solution: training LLMs to generate proofs in formal languages that can be mechanically verified. A key obstacle in this domain is the scarcity of formal data. To address this challenge, we use language models to autoformalize extensive math problems from natural language to formal statements. Next, we train the prover through a standard iterative process that alternates between attempting to prove these statements and training the prover using newly found proofs. Our model outperforms the previous state-of-the-art (SOTA) whole-proof generation model, DeepSeek-Prover-v1.5-RL, by 7.6% on the miniF2F benchmark, achieving a Pass@32 score of 57.6%. Our model successfully solves 7 problems on the challenging PutnamBench by Pass@512, securing the 1st position on the leaderboard. Furthermore, we have cumulatively solved 29.7K problems in Lean Workbook, significantly increasing the 15.7K proofs found by prior methods. We contribute open-source resources to support future research in formal theorem proving.
+                Large language models (LLMs) have demonstrated remarkable reasoning capabilities, particularly in solving mathematical problems. There are two main approaches to tackling math problems: the informal approach, which involves reasoning in natural language, and the formal approach, which relies on proof assistants such as Lean and Isabelle that use formal and machine checkable mathematical languages. State-of-the-art reasoning LLMs such as OpenAI o1 and Deepseek R1 excel at informal math but not at formal math. While the informal approach is more intuitive to humans, it also poses significant challenges in proof verification, undermining its reliability in practical applications.
+              </p>
+              <p>
+                We introduce Goedel-Prover, a state-of-the-art (SOTA) open-source model for formal mathematics that generates machine-verifiable proofs. On the miniF2F benchmark at Pass@32, our model achieves a 57.6% success rate, surpassing the previous SOTA open-source model for whole-proof generation by a significant 7.6% margin. On the challenging PutnamBench, our model successfully solves 7 problems at Pass@512, securing 1st place on the leaderboard. Additionally, we have cumulatively generated 29.7K formal proofs for problems in the Lean Workbook, a substantial increase over the 15.7K proofs produced by prior methods. A key challenge in formal mathematics is data scarcity. To address this, we train LLMs to auto-formalize a large corpus of mathematical problems, converting natural language descriptions into formal statements. We then train a prover through an iterative process, alternating between generating proofs for these formalized statements and refining the model using the newly discovered proofs. Our project contributes to the open-source community for advancing research in formal theorem proving, and developing more capable mathematical reasoning systems.
               </p>
             </div>
           </div>
@@ -169,8 +172,8 @@
         <div style="text-align: center;">
           <p style="font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 0.5rem;">
             Solving</p>
-          <p style="font-size: 2.25rem; font-weight: 700; color: #ef4444; line-height: 1; margin-bottom: 0.5rem;">+89.2%</p>
-          <p style="font-size: 0.875rem; color: #6b7280;">more problems than prior works on Lean-workbook</p>
+          <p style="font-size: 2.25rem; font-weight: 700; color: #ef4444; line-height: 1; margin-bottom: 0.5rem;">1.9X</p>
+          <p style="font-size: 0.875rem; color: #6b7280;">total problems compared to prior works on Lean-workbook</p>
         </div>
       </div>
     </div>
@@ -207,7 +210,7 @@
     </div>
     <figcaption style="font-size: 1rem; color: #6b7280;">
     <p>
-      <strong>(Left)</strong>: The performance of Pass@32 for full proof generation on miniF2F. Due to limited compute, we compare with DeepSeek-Prover-v1.5 on the Pass@32 metric, which is different from Pass@32 × 6400 in the corresponding figure. The Pass@N metric indicates that we generate N proofs for a single problem; if any one of these N proofs successfully solves the problem, it is considered solved.<strong>(Middle)</strong>: This sub-figure presents a comparison of Goedel-Prover-SFT and Deepseek-Prover-v1.5 in terms of miniF2F performance across different inference budgets, ranging from Pass@32, 64, 128, ..., 4 × 6400, to 16 × 6400. The performance numbers of Deepseek-Prover-v1.5 are provided for reference. Due to computational resource constraints, we tested Goedel-Prover-SFT only up to Pass@4 × 6400. Notably, Goedel-Prover-SFT's Pass@256 already exceeds the Pass@16 × 6400 performance of Deepseek-Prover-v1.5-RL (without inference time tree search).<strong>(Right)</strong>: The number of problems solved in Lean-workbook by Goedel-Prover-SFT compared to existing works. InternLM2.5-Step-Prover and InternLM-Math-Plus collectively solve and open-source 15.7K samples, while we solve and open-source 29.7K samples.
+      The Pass@N metric indicates that we generate N proofs for a single problem; if any one of these N proofs successfully solves the problem, it is considered solved. <strong>(Left)</strong>: The performance of Pass@32 for full proof generation on miniF2F. Due to limited compute, we compare with DeepSeek-Prover-v1.5 on the Pass@32 metric. <strong>(Middle)</strong>: This sub-figure presents a comparison of Goedel-Prover-SFT and Deepseek-Prover-v1.5 in terms of miniF2F performance across different inference budgets, ranging from Pass@32, 64, 128, ..., 4 × 6400, to 16 × 6400. <strong>(Right)</strong>: The number of problems solved in Lean-workbook by Goedel-Prover-SFT compared to prior works. InternLM2.5-Step-Prover and InternLM-Math-Plus collectively solve and open-source 15.7K samples, while we solve and open-source 29.7K samples.
     </p>  
     </figcaption>
 
@@ -730,11 +733,11 @@
         color: #444;
       }
 
-      .heart-green {
+      .diamond-green {
         color: #22c55e;
       }
 
-      .heart-black {
+      .diamond-black {
         color: #000;
       }
 
@@ -989,63 +992,63 @@
           <tbody>
             <tr class="goedel-row">
               <td>1</td>
-              <td>Goedel-Prover-SFT <span class="heart-green">♥</span></td>
+              <td>Goedel-Prover-SFT <span class="diamond-green">♦</span></td>
               <td>Whole Proof Generation</td>
               <td>7</td>
               <td>512</td>
             </tr>
             <tr>
               <td>2</td>
-              <td>ABEL <span class="heart-black">♥</span></td>
+              <td>ABEL  </td>
               <td>Tree Search Method</td>
               <td>7</td>
               <td>596</td>
             </tr>
             <tr>
               <td>3</td>
-              <td>Goedel-Prover-SFT <span class="heart-green">♥</span></td>
+              <td>Goedel-Prover-SFT <span class="diamond-green">♦</span></td>
               <td>Whole Proof Generation</td>
               <td>6</td>
               <td>32</td>
             </tr>
             <tr>
               <td>3</td>
-              <td>InternLM2.5-StepProver <span class="heart-green">♥</span></td>
+              <td>InternLM2.5-StepProver <span class="diamond-green">♦</span></td>
               <td>Tree Search Method</td>
               <td>6</td>
               <td>2×32×600</td>
             </tr>
             <tr>
               <td>5</td>
-              <td>InternLM 7B <span class="heart-green">♥</span></td>
+              <td>InternLM 7B <span class="diamond-green">♦</span></td>
               <td>Whole Proof Generation</td>
               <td>4</td>
               <td>4096</td>
             </tr>
             <tr>
               <td>6</td>
-              <td>GPT-4o <span class="heart-black">♥</span></td>
+              <td>GPT-4o  </td>
               <td>Whole Proof Generation</td>
               <td>1</td>
               <td>10</td>
             </tr>
             <tr>
               <td>7</td>
-              <td>COPRA (GPT-4o) <span class="heart-green">♥</span></td>
+              <td>COPRA (GPT-4o) <span class="diamond-green">♦</span></td>
               <td>Whole Proof Generation</td>
               <td>1</td>
               <td>1</td>
             </tr>
             <tr>
               <td>8</td>
-              <td>ReProver w/ retrieval <span class="heart-green">♥</span></td>
+              <td>ReProver w/ retrieval <span class="diamond-green">♦</span></td>
               <td>Tree Search Method</td>
               <td>0</td>
               <td>1</td>
             </tr>
             <tr>
               <td>9</td>
-              <td>ReProver w/o retrieval <span class="heart-green">♥</span></td>
+              <td>ReProver w/o retrieval <span class="diamond-green">♦</span></td>
               <td>Tree Search Method</td>
               <td>0</td>
               <td>1</td>
@@ -1055,7 +1058,7 @@
       </div>
 
       <div class="description">
-        <p>On the challenging PutnamBench dataset, Goedel-Prover-SFT achieves new state-of-the-art performance, solving 7 out of 644 problems with Pass@512, ranking the first place at the <a href="https://trishullab.github.io/PutnamBench/leaderboard.html" target="_blank">Putnam Leaderboard</a>. <span class="heart-green">♥</span></td> indicates a open-source model.</p>
+        <p>On the challenging PutnamBench dataset, Goedel-Prover-SFT achieves new state-of-the-art performance, solving 7 out of 644 problems with Pass@512, ranking the first place at the <a href="https://trishullab.github.io/PutnamBench/leaderboard.html" target="_blank">Putnam Leaderboard</a>. <span class="diamond-green">♦</span></td> indicates a open-source model.</p>
       </div>
 
       <h3 class="subsection-title">Iterative Training Details</h3>
@@ -1164,9 +1167,7 @@
       </div>
 
       <div class="description">
-        <p>The iterative training process shows steady improvement in both the number of problems solved and the quality
-          of solutions. The addition of Mathlib at Iteration 6 and the expansion of formalized statements contribute to
-          the model's improved performance.</p>
+        <p> We gradually increase the number of statements during iterative training. The addition of Mathlib at Iteration 6 contribute to the model's improved on ProofNet.</p>
       </div>
 
       <div class="figures-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; justify-items: center;">
